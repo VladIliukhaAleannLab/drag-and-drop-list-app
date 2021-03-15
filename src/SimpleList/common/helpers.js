@@ -1,3 +1,5 @@
+import { uuid } from 'uuidv4';
+
 export const INIT_DATA = [
   {
     id: 'todo',
@@ -17,20 +19,20 @@ export const FAKE_DATA = [
   {
     id: 'todo',
     items: [
-      {id: 't1', label: 'Code refactoring'},
-      {id: 't2', label: 'Fix a bug'},
+      {id: uuid(), label: 'Code refactoring'},
+      {id: uuid(), label: 'Fix a bug'},
     ]
   },
   {
     id: 'progress',
     items: [
-      {id: 'p1', label: 'Add new feature'}
+      {id: uuid(), label: 'Add new feature'}
     ]
   },
   {
     id: 'complete',
     items: [
-      {id: 'c1', label: 'Create APP'},
+      {id: uuid(), label: 'Create APP'},
     ]
   }
 ];

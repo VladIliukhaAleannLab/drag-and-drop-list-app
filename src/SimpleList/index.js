@@ -5,6 +5,7 @@ import Headers from "./components/Headers";
 import Spinner from "./components/Spinner";
 import { INIT_DATA } from "./common/helpers";
 import { getItems } from "./common/fakeApi";
+import CreateTodo from "./components/CreateTodo";
 
 const SimpleList = () => {
   const [isLoading, setLoading] = useState(true);
@@ -28,6 +29,10 @@ const SimpleList = () => {
         <WrapListBody>
           <Headers/>
           <ListBody
+            items={items}
+            setItems={setItems}
+          />
+          <CreateTodo
             items={items}
             setItems={setItems}
           />

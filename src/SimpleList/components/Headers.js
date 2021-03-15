@@ -1,18 +1,18 @@
 import React from 'react'
-import { WrapHeaders } from "../common/styledComponents";
+import {HeaderTitle, WrapHeaders} from "../common/styledComponents";
 
 const Headers = () => {
   return (
     <WrapHeaders>
-      <div>
+      <HeaderTitle className={'todo'}>
         TODO
-      </div>
-      <div>
+      </HeaderTitle>
+      <HeaderTitle className={'progress'}>
         PROGRESS
-      </div>
-      <div>
+      </HeaderTitle>
+      <HeaderTitle className={'complete'}>
         COMPLETE
-      </div>
+      </HeaderTitle>
     </WrapHeaders>
   )
 };
