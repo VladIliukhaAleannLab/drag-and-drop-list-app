@@ -1,32 +1,29 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import { INIT_DATA } from "../common/helpers";
 import { WrapDropableList } from "../common/styledComponents";
 import DroppableList from "./DroppableList";
 
-const ListBody = () => {
-  const [items, setItems] = useState(INIT_DATA);
+const ListBody = ({items, setItems}) => {
   const [groups, setGroups] = useState({});
 
   useEffect(() => {
-    // Mock an API call.
     buildAndSave(items);
   }, [items]);
 
-  function buildAndSave(items) {
+  const buildAndSave = (items) => {
     const groups = {};
-    for (let i = 0; i < Object.keys(items).length; ++i) {
+    Object.keys(items).forEach((i) => {
       const currentGroup = items[i];
       groups[currentGroup.id] = i;
-    }
+    });
 
     // Set the data.
     setItems(items);
 
     // Makes the groups searchable via their id.
     setGroups(groups);
-  }
+  };
 
   return (
     <DragDropContext
@@ -84,27 +81,27 @@ const ListBody = () => {
           >
             {
               items.length > 0 &&
-                <WrapDropableList
+              <WrapDropableList
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}
                 ref={provided.innerRef}
-                >
-                  <DroppableList
-                    key={items[0].id}
-                    className={'todo'}
-                    {...items[0]}
-                  />
-                  <DroppableList
-                    key={items[1].id}
-                    className={'progress'}
-                    {...items[1]}
-                  />
-                  <DroppableList
-                    key={items[2].id}
-                    className={'complete'}
-                    {...items[2]}
-                  />
-                </WrapDropableList>
+              >
+                <DroppableList
+                  key={items[0].id}
+                  className={'todo'}
+                  {...items[0]}
+                />
+                <DroppableList
+                  key={items[1].id}
+                  className={'progress'}
+                  {...items[1]}
+                />
+                <DroppableList
+                  key={items[2].id}
+                  className={'complete'}
+                  {...items[2]}
+                />
+              </WrapDropableList>
             }
             {provided.placeholder}
           </div>
