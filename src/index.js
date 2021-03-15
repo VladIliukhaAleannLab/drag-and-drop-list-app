@@ -7,8 +7,8 @@ import App from "./App";
 const root = document.getElementById("root");
 
 if (!Object.entries)
-   Object.entries = function( obj ){
-      let ownProps = Object.keys( obj ),
+   Object.entries = function (obj) {
+      let ownProps = Object.keys(obj),
          i = ownProps.length,
          resArray = new Array(i); // preallocate the Array
 
@@ -17,7 +17,7 @@ if (!Object.entries)
       return resArray;
    };
 
-if(!Object.values) {
+if (!Object.values) {
   Object.values = function (obj) {
     let vals = [];
     for (const prop in obj) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import {HeaderTitle, WrapHeaders} from "../common/styledComponents";
+import { HeaderTitle, WrapHeaders } from "../common/styledComponents";
 
 const Headers = () => {
   return (

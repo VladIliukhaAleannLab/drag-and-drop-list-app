@@ -4,6 +4,10 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { WrapDropableList } from "../common/styledComponents";
 import DroppableList from "./DroppableList";
 
+const TODO = 0;
+const PROGRESS = 1;
+const COMPLETE = 2;
+
 const ListBody = ({items, setItems}) => {
   const [groups, setGroups] = useState({});
 
@@ -87,19 +91,19 @@ const ListBody = ({items, setItems}) => {
                 ref={provided.innerRef}
               >
                 <DroppableList
-                  key={items[0].id}
+                  key={items[TODO].id}
                   className={'todo'}
-                  {...items[0]}
+                  {...items[TODO]}
                 />
                 <DroppableList
-                  key={items[1].id}
+                  key={items[PROGRESS].id}
                   className={'progress'}
-                  {...items[1]}
+                  {...items[PROGRESS]}
                 />
                 <DroppableList
-                  key={items[2].id}
+                  key={items[COMPLETE].id}
                   className={'complete'}
-                  {...items[2]}
+                  {...items[COMPLETE]}
                 />
               </WrapDropableList>
             }

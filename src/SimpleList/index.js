@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import ListBody from "./components/ListBody";
 import { WrapListBody } from "./common/styledComponents";
 import Headers from "./components/Headers";
