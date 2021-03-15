@@ -26,5 +26,5 @@ if(!Object.values) {
   }
 }
 
-ReactDOM.render(<App {...root.dataset} />, root);
+ReactDOM.render(<App/>, root);
 
